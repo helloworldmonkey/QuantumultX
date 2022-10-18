@@ -509,7 +509,6 @@ function SubFlow() {
     }
     var message = total + "\n" + usd + ", " + left;
     ntf_flow = 1;
-    $notify("流量信息: ⟦" + subtag + "⟧", epr, message, subinfo_link)
     Finfo = {
       bytes_used:
         parseFloat(
@@ -529,6 +528,7 @@ function SubFlow() {
         parseFloat(sinfo.split("expire=")[1].split(",")[0])
       ),
     };
+    $notify(JSON.stringify(Finfo), "", "");
   }
 //  } else if (Pinfo ==1){
 //    $notify("流量信息: ⟦" + subtag + "⟧", "", "⚠️ 该订阅链接未返回任何流量信息", subinfo_link)
